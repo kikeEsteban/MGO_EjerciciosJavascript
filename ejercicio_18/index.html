@@ -1,0 +1,44 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta charset="utf-8"> 
+        <title>Ejercicio 18</title> 
+    </head> 
+    <body> 
+        <h1>Eventos</h1>
+        <p>Haz que cuando se haga click sobre el botón “Guardar”, salté un alert con un mensaje de guardado.</p>
+        <button id="saveBtn" onclick="displayAlert()">Guardar</button>
+        <br>
+        <br>
+        <p>Cuando hagamos foco sobre este input se pondrá de color amarillo y cuando se lo quitemos cambiará de color</p>
+        <label>Nombre</label>
+        <input id="nameInput" type=”text” onfocus="onFocus()" onblur="onBlur()"/>
+        <br>
+        <br>
+        <p>Dependiendo si escribamos una vocal o una consonante el contenido del input aparecerá de distinto color</p>
+        <label>Escribe una letra</label>
+        <input id="letterInput" type=”text” oninput="updateLetter()"/> 
+        <script>
+            function displayAlert() {
+                alert("Botón de guardar pulsado");
+            }
+            function onFocus() {
+                document.getElementById("nameInput").style = "background-color: yellow";
+            }
+            function onBlur() {
+                document.getElementById("nameInput").style = "background-color: white";
+            }
+            function updateLetter() {
+                const target = document.getElementById("letterInput")
+                if(target.value){ 
+                    const lastLetter = target.value.toUpperCase().charAt(target.value.length - 1);
+                    if(["A","E","I","O","U"].includes(lastLetter)){
+                        target.style="color: blue";
+                    } else {
+                        target.style="color: orange";
+                    }
+                }
+            }
+        </script>
+    </body> 
+</html>
