@@ -17,4 +17,4 @@ for(const user of users){
 }
 
 console.log("Listado de usarios no premium");
-console.log(nonPremiumUsers)
+console.log(nonPremiumUsers);
